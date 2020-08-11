@@ -5,7 +5,7 @@
 </div>
 
 ## Index
-- [¿Qué es Node?](#que-es-node)
+- [¿Qué es Node?](#qué-es-node)
 
 <div align="center" style="padding: 8px 0">
   <img src="./md/node.svg" alt="node.js" width="300">
