@@ -1,0 +1,19 @@
+{
+  "name": "backend-node",
+  "version": "0.1.0",
+  "description": "Un chat como telegram pero mio",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "chat",
+    "telegram",
+    "server"
+  ],
+  "author": "aomine Dev",
+  "license": "MIT",
+  "dependencies": {
+    "express": "4.17.1"
+  }
+}
