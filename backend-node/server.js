@@ -1,9 +1,16 @@
 const express = require('express')
+const router = express.Router()
 
 const app = express()
 
-app.use('/', (req, res) => {
-  res.send('Hola!')
+app.use('/api/message', router)
+
+router.get('/', (req, res) => {
+  res.send('Lista de mensajes')
+})
+
+router.post('/', (req, res) => {
+  res.send('Mensaje añadido')
 })
 
 app.listen(3000, () => {
