@@ -10,7 +10,12 @@ app.use(bodyParser.json())
 // Router
 app.use('/api/message', router)
 
+// Routes
 router.get('/', (req, res) => {
+  console.log(req.headers)
+  res.header({
+    'custom-header': 'Nuestro valor personalizado'
+  })
   res.send('Lista de mensajes')
 })
 
@@ -19,8 +24,9 @@ router.delete('/', (req, res) => {
   console.log(req.query)
 
   const { id } = req.body
+  const { orderBy, limit } = req.query
 
-  res.send(`Mensaje con el id ${id} ha sido removido correctamente`)
+  res.send(`Mensaje con el id ${id} ha sido removido correctamente, la query nos indica que se ordenara por el ${orderBy} y estara limitada a ${limit} items`)
 })
 
 app.listen(3000, () => {
