@@ -1,0 +1,20 @@
+{
+  "name": "platzi-chat",
+  "version": "0.1.0",
+  "description": "Un chat como telegram pero mio",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "keywords": [
+    "chat",
+    "telegram",
+    "server",
+    "platzi"
+  ],
+  "author": "aomine Dev",
+  "license": "MIT",
+  "dependencies": {
+    "express": "4.17.1"
+  }
+}
