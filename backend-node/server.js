@@ -1,7 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 
-const messagesApi = require('./router/messages')
+const router = require('./routes')
 
 const app = express()
 
@@ -9,7 +9,7 @@ const app = express()
 app.use(bodyParser.json())
 
 // Router
-messagesApi(app)
+router(app)
 
 // Statics
 app.use('/app', express.static('public'))

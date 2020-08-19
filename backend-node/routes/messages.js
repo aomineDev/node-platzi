@@ -1,10 +1,7 @@
 const express = require('express')
 const response = require('../network/response')
 
-function messagesApi (app) {
-  const router = express.Router()
-
-  app.use('/api/message', router)
+const router = express.Router()
 
   router.get('/', (req, res) => {
     console.log(req.headers)
@@ -35,6 +32,5 @@ function messagesApi (app) {
   
     res.send(`Mensaje con el id ${id} ha sido removido correctamente, la query nos indica que se ordenara por el ${orderBy} y estara limitada a ${limit} items`)
   })
-}
 
-module.exports = messagesApi
+module.exports = router
