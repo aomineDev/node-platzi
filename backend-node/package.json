@@ -2,9 +2,9 @@
   "name": "backend-node",
   "version": "0.1.0",
   "description": "Un chat como telegram pero mio",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon index.js"
   },
   "keywords": [
     "chat",

@@ -1,0 +1,27 @@
+/* Chats */
+
+.chats {
+  border-right: 1px solid rgb(38, 38, 38, .2);
+}
+.chats-title {
+  padding: 16px 20px 4px;
+  border-bottom: 1px solid rgb(38, 38, 38, .2);
+}
+.chats-users {
+  display: flex;
+  flex-direction: column;
+}
+.btn-chat {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 16px;
+  transition: .3s;
+  width: 100%;
+  border-radius: 0;
+}
+.btn-chat.active {
+  font-weight: bold;
+}
+.btn-chat:hover {
+  background-color: rgb(38, 38, 38, .1);
+}

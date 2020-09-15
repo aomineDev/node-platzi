@@ -1,0 +1,36 @@
+/* Header */
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 32px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+  background-color: #fff;
+}
+/* .title {
+
+} */
+.title-platzi {
+  color: #0099FF;
+}
+.userbox {
+  display: flex;
+  align-items: center;
+}
+.btn-anotheruser {
+  background-color: #0099FF;
+  color: #fff;
+  padding: 8px 20px;
+  margin-right: 20px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.username {
+  font-weight: 500;
+  font-size: 18px;
+}

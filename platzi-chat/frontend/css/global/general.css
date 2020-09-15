@@ -1,0 +1,20 @@
+/* General */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: inherit;
+  font-family: inherit;
+}
+body {
+  min-height: 100vh;
+  font-family: 'Ubuntu', sans-serif;
+  color: #262626;
+}
+button,
+a {
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
