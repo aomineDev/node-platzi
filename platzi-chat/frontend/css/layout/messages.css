@@ -33,17 +33,21 @@
   background-color: #eee;
   border-radius: 100px;
 }
-.itsme {
+.itsme .message {
   color: #fff;
   background-color: #0099FF;
-  align-self: flex-end;
 }
 .message-image {
   display: block;
   max-width: 200px;
+}
+.itsme .message-image,
+.itsme .message {
   align-self: flex-end;
 }
 .form {
+  display: flex;
+  align-items: center;
   padding: 12px 20px;
 }
 .message-input {
@@ -52,4 +56,25 @@
   background-color: #eee;
   border-radius: 100px;
   font-size: 16px;
+}
+.file-input {
+  display: none;
+}
+.file-icon {
+  cursor: pointer;
+  margin-left: 20px;
+  min-width: 42px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: .3s;
+}
+.file-icon:hover {
+  background-color: #eee;
+}
+.file-icon i {
+  font-size: 24px;
+  color: #333;
 }
