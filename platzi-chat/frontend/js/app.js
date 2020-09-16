@@ -1,12 +1,13 @@
 import config from './config/index.js'
 
-import { form, anotheruser } from './utils/htmlElements.js'
+import { form, anotheruser, fileInput } from './utils/htmlElements.js'
 
 import { handleUserButtons } from './utils/handlers/handleEvents.js'
 import {
   handleUsers,
   handleUserModal,
   handleCreateMessage,
+  handleCreateMessageWithImage,
   handleNewMessage
 } from './utils/handlers/index.js'
 
@@ -30,7 +31,17 @@ anotheruser.addEventListener('click', () => {
 form.addEventListener('submit', e => {
   e.preventDefault()
 
+  if (fileInput.files.length) {
+    handleCreateMessageWithImage()
+    return
+  }
+  
   handleCreateMessage()
+})
+
+// On file 
+fileInput.addEventListener('change', () => {
+  fileInput.classList.add('active')
 })
 
 // SOCKETS

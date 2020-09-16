@@ -79,4 +79,12 @@ export function renderMessages () {
   store.messages.forEach(message => {
     renderMessage(message)
   })
+
+  const images = document.querySelectorAll('.message-image')
+
+  images.forEach(image => {
+    image.addEventListener('load', () => {
+      messagesBox.scrollTop = messagesBox.scrollHeight
+    })
+  })
 }

@@ -24,11 +24,19 @@ function post ({ service, data }) {
   })
 }
 
+function multipart ({ service, data }) {
+  return fetch(`${apiUrl}/${service}`, {
+    method: 'POST',
+    body: data
+  })
+}
+
 const service = {
   getAll,
   get,
   getWithQuery,
-  post
+  post,
+  multipart
 }
 
 export default service

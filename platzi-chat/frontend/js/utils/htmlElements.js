@@ -15,3 +15,5 @@ export const messageTitle = document.getElementById('message-title')
 export const form = document.getElementById('form')
 
 export const message = document.getElementById('message')
+
+export const fileInput = document.getElementById('file-input')

@@ -9,7 +9,8 @@ import {
   overlay,
   chatBox,
   messagesBox,
-  message
+  message,
+  fileInput
 } from '../htmlElements.js'
 
 import {
@@ -85,6 +86,8 @@ export function handleUserModal () {
 }
 
 export function handleCreateMessage () {
+  if (message.value === '') return
+
   const data = {
     chat: store.chat._id,
     user: store.user._id,
@@ -93,6 +96,23 @@ export function handleCreateMessage () {
   message.value = ''
 
   messagesService.createMessage({ message: data })
+}
+
+export function handleCreateMessageWithImage () {
+  if (message.value === '') return
+
+  const formData = new FormData()
+
+  formData.append('chat', store.chat._id)
+  formData.append('user', store.user._id)
+  formData.append('message', message.value)
+  formData.append('file', fileInput.files[0])
+
+  message.value = ''
+  fileInput.value = ''
+  fileInput.classList.remove('active')
+
+  messagesService.createdMessageWithFile({ message: formData })
 }
 
 export function handleNewMessage (data) {
@@ -107,4 +127,6 @@ export function handleNewMessage (data) {
   messagesBox.innerHTML = ''
 
   renderMessages()
+
+  
 }

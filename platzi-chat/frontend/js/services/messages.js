@@ -25,6 +25,13 @@ class MessagesService {
 
     return createdMessage
   }
+
+  async createdMessageWithFile ({ message }) {
+    const response = await service.multipart({ service: this.service, data: message })
+    const createdMessage = await response.json()
+    
+    return createdMessage
+  }
 }
 
 export default MessagesService

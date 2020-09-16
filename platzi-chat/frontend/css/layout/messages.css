@@ -29,9 +29,10 @@
   margin-bottom: 12px;
 }
 .message {
+  max-width: 70%;
   padding: 8px 12px;
   background-color: #eee;
-  border-radius: 100px;
+  border-radius: 17px;
 }
 .itsme .message {
   color: #fff;
@@ -77,4 +78,8 @@
 .file-icon i {
   font-size: 24px;
   color: #333;
+  transition: .3s;
+}
+.file-input.active + .file-icon i {
+  color: #0099FF;
 }
