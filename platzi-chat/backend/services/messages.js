@@ -33,7 +33,7 @@ class MessagesService {
     const createdMessage = new this.Model(message)
     await createdMessage.save()
 
-    socket.io.emit('message', message)
+    socket.io.emit('message', createdMessage)
 
     return createdMessage
   }

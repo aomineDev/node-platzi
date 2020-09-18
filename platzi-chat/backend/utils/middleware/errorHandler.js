@@ -5,10 +5,7 @@ function logErrors (err, req, res, next) {
 }
 
 function errorHandler (err, req, res, next) {
-  res.status(400).json({
-    code: 400,
-    message: err.message
-  })
+  res.status(400).send(err)
 }
 
 module.exports = {

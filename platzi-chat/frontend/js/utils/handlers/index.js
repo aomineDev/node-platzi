@@ -38,16 +38,6 @@ export async function handleUsers () {
   renderUsers()
 }
 
-export function handleNewUser (userButton) {
-  chatBox.innerHTML = ''
-  messagesBox.innerHTML = ''
-
-  handleUserModal()
-
-  selectUser(userButton)
-  renderUsername()
-}
-
 export async function handleChats () {
   const { data: chats } = await chatsService.getChats({ userId: store.user._id })
 
@@ -64,28 +54,7 @@ export async function handleMessages () {
   store.messages = messages
 }
 
-export function handleRenders () {
-  renderChats()
-
-  renderUserSelected()
-
-  renderMessages()
-}
-
-export function handleNewChat (chatButton) {
-  messagesBox.innerHTML = ''
-
-  selectChat(chatButton)
-
-  renderUserSelected()
-}
-
-export function handleUserModal () {
-  overlay.classList.toggle('active')
-  usersBox.classList.toggle('active')
-}
-
-export function handleCreateMessage () {
+export async function handleCreateMessage () {
   if (message.value === '') return
 
   const data = {
@@ -95,7 +64,13 @@ export function handleCreateMessage () {
   }
   message.value = ''
 
-  messagesService.createMessage({ message: data })
+  const error = await messagesService.createMessage({ message: data })
+
+  if (error.kind) {
+    console.error('[error] name: ' + error.name)
+    console.error('[error] type: ' + error.kind)
+    console.error('[error] message: ' + error.message)
+  }
 }
 
 export function handleCreateMessageWithImage () {
@@ -115,6 +90,30 @@ export function handleCreateMessageWithImage () {
   messagesService.createdMessageWithFile({ message: formData })
 }
 
+export function handleUserModal () {
+  overlay.classList.toggle('active')
+  usersBox.classList.toggle('active')
+}
+
+export function handleNewUser (userButton) {
+  chatBox.innerHTML = ''
+  messagesBox.innerHTML = ''
+
+  handleUserModal()
+
+  selectUser(userButton)
+
+  renderUsername()
+}
+
+export function handleNewChat (chatButton) {
+  messagesBox.innerHTML = ''
+
+  selectChat(chatButton)
+
+  renderUserSelected()
+}
+
 export function handleNewMessage (data) {
   if (data.chat !== store.chat._id) return
 
@@ -127,6 +126,12 @@ export function handleNewMessage (data) {
   messagesBox.innerHTML = ''
 
   renderMessages()
+}
 
-  
+export function handleRenders () {
+  renderChats()
+
+  renderUserSelected()
+
+  renderMessages()
 }

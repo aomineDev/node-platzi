@@ -21,9 +21,13 @@ class MessagesService {
 
   async createMessage ({ message }) {
     const response = await service.post({ service: this.service, data: message })
-    const createdMessage = await response.json()
+    const data = await response.json()
 
-    return createdMessage
+    if (data.errors) {
+      return data.errors.message
+    }
+
+    return data
   }
 
   async createdMessageWithFile ({ message }) {
