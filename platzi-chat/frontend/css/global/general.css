@@ -13,7 +13,8 @@ body {
   color: #262626;
 }
 button,
-a {
+a,
+label {
   cursor: pointer;
   user-select: none;
   -webkit-tap-highlight-color: transparent;

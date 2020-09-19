@@ -1,11 +1,22 @@
 import config from './config/index.js'
 
-import { form, anotheruser, fileInput } from './utils/htmlElements.js'
+import {
+  form,
+  message,
+  anotheruser,
+  anotheruserTwo,
+  fileInput,
+  closeUsersModal,
+  chatsBtn,
+  closeChat,
+  btnSubmit
+} from './utils/htmlElements.js'
 
 import { handleUserButtons } from './utils/handlers/handleEvents.js'
 import {
   handleUsers,
   handleUserModal,
+  handleSidenav,
   handleCreateMessage,
   handleCreateMessageWithImage,
   handleNewMessage
@@ -15,17 +26,24 @@ const socket = io.connect(config.baseUrl)
 
 // EVENTS
 // On window load
-window.addEventListener('load', async () => {
-  
+window.addEventListener('load', async () => {  
   await handleUsers()
-
+  
   handleUserButtons()
 })
 
+// on close modal
+closeUsersModal.addEventListener('click', handleUserModal)
+
 // on click in another user button
-anotheruser.addEventListener('click', () => {
-  handleUserModal()
-})
+anotheruser.addEventListener('click', handleUserModal)
+anotheruserTwo.addEventListener('click', handleUserModal)
+
+// on chats btn
+chatsBtn.addEventListener('click', handleSidenav)
+
+// on close chat
+closeChat.addEventListener('click', handleSidenav)
 
 // On submit in form
 form.addEventListener('submit', e => {
@@ -37,6 +55,15 @@ form.addEventListener('submit', e => {
   }
   
   handleCreateMessage()
+})
+
+// On message change
+message.addEventListener('input', () => {
+  if (message.value) {
+    btnSubmit.classList.add('active')
+    return
+  }
+  btnSubmit.classList.remove('active')
 })
 
 // On file 

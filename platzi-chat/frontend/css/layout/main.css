@@ -6,3 +6,9 @@
   padding-top: 61px;
   height: 100vh;
 }
+@media (max-width: 576px) {
+  .main {
+    padding-top: 119px;
+    display: flex;
+  }
+}

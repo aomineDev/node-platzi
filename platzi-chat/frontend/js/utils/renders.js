@@ -9,10 +9,18 @@ import {
 } from './htmlElements.js'
 
 export function renderUser (user) {
-  usersBox.innerHTML += `<button class="btn btn-user" data-id="${user._id}">${user.name}</button>`
+  const button = document.createElement('button')
+  button.setAttribute('class', 'btn btn-user')
+  button.setAttribute('data-id', user._id)
+
+  const name = document.createTextNode(user.name)
+  button.appendChild(name)
+
+  usersBox.appendChild(button)
 }
 
 export function renderUsername () {
+  username.style.display = 'block'
   username.innerHTML = store.user.name
 }
 
@@ -57,7 +65,9 @@ export function renderMessage (message) {
 
 function renderImage ({ fileUrl }) {
   if (fileUrl) {
-    return `<img src="${fileUrl}" class="message-image">`
+    const newFileUrl = fileUrl.replace('localhost', '192.168.137.1')
+
+    return `<img src="${newFileUrl}" class="message-image">`
   }
 
   return ''

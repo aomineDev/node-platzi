@@ -7,6 +7,7 @@
   justify-content: center;
   background-color: #fff;
   width: 500px;
+  max-width: 80%;
   padding-top: 50px;
   padding-bottom: 50px;
   transition: .3s;
@@ -23,7 +24,7 @@
   font-weight: 700;
 }
 .btn-user {
-  width: 30%;
+  width: 150px;
   background-color: #262626;
   color: #fff;
   padding-top: 12px;

@@ -10,7 +10,9 @@ import {
   chatBox,
   messagesBox,
   message,
-  fileInput
+  btnSubmit,
+  fileInput,
+  sidenav
 } from '../htmlElements.js'
 
 import {
@@ -63,6 +65,7 @@ export async function handleCreateMessage () {
     message: message.value
   }
   message.value = ''
+  btnSubmit.classList.remove('active')
 
   const error = await messagesService.createMessage({ message: data })
 
@@ -84,6 +87,7 @@ export function handleCreateMessageWithImage () {
   formData.append('file', fileInput.files[0])
 
   message.value = ''
+  btnSubmit.classList.remove('active')
   fileInput.value = ''
   fileInput.classList.remove('active')
 
@@ -93,6 +97,11 @@ export function handleCreateMessageWithImage () {
 export function handleUserModal () {
   overlay.classList.toggle('active')
   usersBox.classList.toggle('active')
+}
+
+export function handleSidenav () {
+  overlay.classList.toggle('active')
+  sidenav.classList.toggle('active')
 }
 
 export function handleNewUser (userButton) {
