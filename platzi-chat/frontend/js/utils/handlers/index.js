@@ -67,12 +67,12 @@ export async function handleCreateMessage () {
   message.value = ''
   btnSubmit.classList.remove('active')
 
-  const error = await messagesService.createMessage({ message: data })
+  const data = await messagesService.createMessage({ message: data })
 
-  if (error.kind) {
-    console.error('[error] name: ' + error.name)
-    console.error('[error] type: ' + error.kind)
-    console.error('[error] message: ' + error.message)
+  if (data.kind) {
+    console.error('[error] name: ' + data.name)
+    console.error('[error] type: ' + data.kind)
+    console.error('[error] message: ' + data.message)
   }
 }
 
