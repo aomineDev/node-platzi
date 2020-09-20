@@ -15,6 +15,11 @@
     <h2 class="users-title">Select User</h2>
   </div>
 
+  <div class="image-modal" id="image-modal">
+    <button class="btn btn-rounded close-image" id="close-image-modal"><i class="fas fa-times"></i></button>
+    <div class="image-wrapper" id="image-wrapper"></div>
+  </div>
+
   <header class="header">
     <h1 class="title"><span class="title-platzi">Platzi</span> Chat</h1>
     <div class="userbox">
@@ -35,9 +40,10 @@
       </div>
       <div class="chats-users" id="chats"></div>
     </section>
+
     <section class="messages">
       <h3 class="message-title" id="message-title">Name</h3>
-      <div class="messagesBox" id="messagesBox"></div>
+      <div class="messages-box" id="messagesBox"></div>
       <form class="form" id="form" autocomplete="off">
         <input type="text" id="message" placeholder="message..." class="input message-input">
         <button type="submit" class="btn btn-rounded btn-submit" id="btn-submit"><i class="fas fa-paper-plane"></i></button>

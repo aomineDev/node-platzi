@@ -1,5 +1,11 @@
 export const overlay = document.getElementById('overlay')
 
+export const imageModal = document.getElementById('image-modal')
+
+export const imageWrapper = document.getElementById('image-wrapper')
+
+export const closeImageModal = document.getElementById('close-image-modal')
+
 export const usersBox = document.getElementById('users')
 
 export const chatBox = document.getElementById('chats')

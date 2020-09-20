@@ -1,6 +1,8 @@
 import store from '../store.js'
+import { handleImageModal } from './handlers/index.js'
 
 import {
+  imageWrapper,
   usersBox,
   username,
   chatBox,
@@ -73,6 +75,10 @@ function renderImage ({ fileUrl }) {
   return ''
 }
 
+function renderImageModal ({ image }) {
+  imageWrapper.innerHTML = `<img src="${image.src}" class="image">`
+}
+
 export function renderUsers () {
   store.users.forEach(user => {
     renderUser(user)
@@ -95,6 +101,12 @@ export function renderMessages () {
   images.forEach(image => {
     image.addEventListener('load', () => {
       messagesBox.scrollTop = messagesBox.scrollHeight
+    })
+
+
+    image.addEventListener('click', () => {
+      renderImageModal({ image })
+      handleImageModal()
     })
   })
 }

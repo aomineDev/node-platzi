@@ -5,8 +5,9 @@ import ChatsService from '../../services/chats.js'
 import MessagesService from '../../services/messages.js'
 
 import {
-  usersBox,
   overlay,
+  imageModal,
+  usersBox,
   chatBox,
   messagesBox,
   message,
@@ -67,12 +68,12 @@ export async function handleCreateMessage () {
   message.value = ''
   btnSubmit.classList.remove('active')
 
-  const data = await messagesService.createMessage({ message: data })
+  const createdMessage = await messagesService.createMessage({ message: data })
 
-  if (data.kind) {
-    console.error('[error] name: ' + data.name)
-    console.error('[error] type: ' + data.kind)
-    console.error('[error] message: ' + data.message)
+  if (createdMessage.kind) {
+    console.error('[error] name: ' + createdMessage.name)
+    console.error('[error] type: ' + createdMessage.kind)
+    console.error('[error] message: ' + createdMessage.message)
   }
 }
 
@@ -97,6 +98,11 @@ export function handleCreateMessageWithImage () {
 export function handleUserModal () {
   overlay.classList.toggle('active')
   usersBox.classList.toggle('active')
+}
+
+export function handleImageModal () {
+  overlay.classList.toggle('active')
+  imageModal.classList.toggle('active')
 }
 
 export function handleSidenav () {

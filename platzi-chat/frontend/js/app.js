@@ -9,17 +9,20 @@ import {
   closeUsersModal,
   chatsBtn,
   closeChat,
-  btnSubmit
+  btnSubmit,
+  closeImageModal
 } from './utils/htmlElements.js'
 
 import { handleUserButtons } from './utils/handlers/handleEvents.js'
+
 import {
   handleUsers,
   handleUserModal,
   handleSidenav,
   handleCreateMessage,
   handleCreateMessageWithImage,
-  handleNewMessage
+  handleNewMessage,
+  handleImageModal
 } from './utils/handlers/index.js'
 
 const socket = io.connect(config.baseUrl)
@@ -32,8 +35,11 @@ window.addEventListener('load', async () => {
   handleUserButtons()
 })
 
-// on close modal
+// on close users modal
 closeUsersModal.addEventListener('click', handleUserModal)
+
+// on close image modal
+closeImageModal.addEventListener('click', handleImageModal)
 
 // on click in another user button
 anotheruser.addEventListener('click', handleUserModal)
