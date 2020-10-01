@@ -5,6 +5,7 @@
 /* Layout */
 @import "./layout/users.css";
 @import "./layout/image.css";
+@import "./layout/app.css";
 @import "./layout/header.css";
 @import "./layout/main.css";
 @import "./layout/chats.css";

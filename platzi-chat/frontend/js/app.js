@@ -69,6 +69,7 @@ message.addEventListener('input', () => {
     btnSubmit.classList.add('active')
     return
   }
+
   btnSubmit.classList.remove('active')
 })
 

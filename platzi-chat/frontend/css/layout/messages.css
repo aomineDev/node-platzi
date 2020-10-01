@@ -1,13 +1,16 @@
 /* Messages */
 
-/* .messages {
-} */
+.messages {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
 .message-title {
   padding: 16px 20px 4px;
   border-bottom: 1px solid rgb(38, 38, 38, .2);
 }
 .messages-box {
-  height: calc(100vh - 170px);
+  flex: 1;
   padding: 16px 20px;
   overflow-y: auto;
 }
@@ -89,9 +92,6 @@
 @media (max-width: 576px) {
   .messages {
     width: 100%;
-  }
-  .messages-box {
-    height: calc(100vh - 228px);
   }
   .btn-submit {
     margin-left: 12px;
